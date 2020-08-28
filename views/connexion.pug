@@ -1,0 +1,12 @@
+extends layout
+block content
+    if locals.erreur
+        div(class="ui negative message")=locals.erreur
+    form(class="ui form", action="/connexion", method="post")
+        div(class="field")
+            label Nom d'utilisateur
+            input(type="text", name="nomUtilisateur", placeholder="Nom d'utilisateur")
+        div(class="field")
+            label Mot de passe
+            input(type="password", name="password", placeholder="Mot de passe")
+        button(class="ui blue button", type="envoyer") Se connecter

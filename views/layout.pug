@@ -1,0 +1,19 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/semantic/semantic.min.css')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+    .header
+      div(class="ui fixed menu")
+        a(href="/", class="header item") Accueil
+        div(class= "right menu")
+        if locals.loggedIn
+          p(class="header item") Bienvenue #{locals.nomUtilisateur} !
+          a(href="/deconnexion", class="header item") Se déconnecter
+        else
+          a(href="/connexion", class="header item") Connexion
+          a(href="/inscription", class="header item") Inscription
+
+    block content

@@ -1,0 +1,17 @@
+extends layout
+block content
+    if locals.erreur
+        div(class="ui negative message")=locals.erreur
+    if locals.reussite
+        div(class="ui positive message")=locals.reussite
+    form(class="ui form", action="/inscription", method="post")
+        div(class="field")
+            label Nom d'utilisateur
+            input(type="text", name="nomUtilisateur", placeholder="Nom d'utilisateur")
+        div(class="field")
+            label Mot de passe
+            input(type="password", name="password", placeholder="Mot de passe")
+        div(class="field")
+            label Confirmer le mot de passe
+            input(type="password", name="confirmerPassword", placeholder="Confirmer mot de passe")    
+        button(class="ui blue button", type="envoyer") S'inscrire

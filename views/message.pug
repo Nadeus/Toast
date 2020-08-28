@@ -1,0 +1,11 @@
+extends layout
+
+block content
+    div(class="ui comments")
+        .comment
+            a(class="avatar" href="/message/" + message.id)
+                img(src="https://image.jeuxvideo.com/avatar-md/f/i/finalwar-1532550416-ca859331e534d1efdf5435ce00fc6f84.jpg")
+            .content
+                .metadata
+                    .date= message.created_at
+                .text=message.content
